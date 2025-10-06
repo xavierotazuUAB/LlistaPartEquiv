@@ -115,10 +115,30 @@ class LlistaTest {
 		assertTrue(llista.eliminaValor(0));
 		assertTrue(llista.esBuida());
 
+			// Llista de 2 elements
+		llista = creaLlistaNElements(2);
+		
+		// Eliminem primer valor de la llista
+		llista.eliminaValor(0);
+	
+		// Comprovem que la llista és correcta 
+		assertEquals(llista.getValor(0),1);
+		assertEqualse(llista.getNElements(),1);
+		
+			// Llista de 2 elements
+		llista = creaLlistaNElements(2);
+		
+		// Eliminem l'ultim valor de la llista
+		llista.eliminaValor(1);
+	
+		// Comprovem que la llista és correcta 
+		assertEquals(llista.getValor(0),0);
+		assertEqualse(llista.getNElements(),1);
+			
 			// Llista de 4 elements
 		llista = creaLlistaNElements(4);
 		
-		// Insertem el valor al mig de la llista
+		// Eliminem el valor al mig de la llista
 		llista.eliminaValor(2);
 
 		// Comprovem que la llista és correcta 
