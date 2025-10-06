@@ -73,24 +73,57 @@ class LlistaTest {
 
 			// Particions equivalents del paràmetre posicio aplicades en una llista d'un element
 
-		Llista llistaun = creaLlistaNElements(1); 
+		llista = creaLlistaNElements(1); 
 		
 		// Posicions incorrectes
-		assertFalse(llistaun.insertarValor(-10, 0));	// Insertem a la posició -10
-		assertFalse(llistaun.insertarValor(-1, 0));		// Insertem a la posició -1
-		assertFalse(llistaun.insertarValor(10, 0));		// Insertem a la posició 10
+		assertFalse(llista.insertarValor(-10, 0));	// Insertem a la posició -10
+		assertFalse(llista.insertarValor(-1, 0));		// Insertem a la posició -1
+		assertFalse(llista.insertarValor(2, 0));		// Insertem a la posició -1
+		assertFalse(llista.insertarValor(10, 0));		// Insertem a la posició 10
 		
 		// Posicions correctes		
-		assertTrue(llistaun.insertarValor(0, 10));		// Insertem a la posició 0 (la primera).
-		assertEquals(llistaun.getValor(0),10);
-		assertEquals(llistaun.getValor(1),0);
+		assertTrue(llista.insertarValor(0, 10));		// Insertem a la posició 0 (la primera).
+		assertEquals(llista.getValor(0),10);
+		assertEquals(llista.getValor(1),0);
 
-		Llista llistaun2 = creaLlistaNElements(1); 
+		llista = creaLlistaNElements(1); 
 
-		assertTrue(llistaun2.insertarValor(1, 1));		// Insertem a la posició 1 (la ultima)
-		assertEquals(llistaun2.getValor(0),0);
-		assertEquals(llistaun2.getValor(1),1);
+		assertTrue(llista.insertarValor(1, 1));		// Insertem a la posició 1 (la ultima)
+		assertEquals(llista.getValor(0),0);
+		assertEquals(llista.getValor(1),1);
 		
+
+			// Particions equivalents del paràmetre posicio aplicades en una llista de dos element
+	
+		llista = creaLlistaNElements(2); 
+		
+		// Posicions incorrectes
+		assertFalse(llista.insertarValor(-10, 0));	// Insertem a la posició -10
+		assertFalse(llista.insertarValor(-1, 0));		// Insertem a la posició -1
+		assertFalse(llista.insertarValor(3, 0));		// Insertem a la posició -1
+		assertFalse(llista.insertarValor(10, 0));		// Insertem a la posició 10
+		
+		// Posicions correctes		
+		assertTrue(llista.insertarValor(0, 10));		// Insertem a la posició 0 (la primera).
+		assertEquals(llista.getValor(0),10);
+		assertEquals(llista.getValor(1),0);
+		assertEquals(llista.getValor(2),1);
+	
+		llista = creaLlistaNElements(1); 
+	
+		assertTrue(llista.insertarValor(1, 11));		// Insertem a la posició 1 (el mig)
+		assertEquals(llista.getValor(0),0);
+		assertEquals(llista.getValor(1),11);
+		assertEquals(llista.getValor(2),1);
+
+		llista = creaLlistaNElements(1); 
+		
+		assertTrue(llista.insertarValor(2, 12));		// Insertem a la posició 2 (la ultima)
+		assertEquals(llista.getValor(0),0);
+		assertEquals(llista.getValor(1),1);
+		assertEquals(llista.getValor(2),12);
+	
+	
 	}
 
 	@Test
