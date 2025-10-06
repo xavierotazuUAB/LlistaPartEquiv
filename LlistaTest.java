@@ -145,7 +145,57 @@ class LlistaTest {
 		assertEquals(llista.getValor(0),0);
 		assertEquals(llista.getValor(1),1);	
 		assertEquals(llista.getValor(2),3);	
-	}
+		assertEquals(llista.getNElements(),3);
+
+	
+			// Llista de 4 elements
+		llista = creaLlistaNElements(4);
+		
+		// Eliminem el primer element de la llista
+		llista.eliminaValor(0);
+	
+		// Comprovem que la llista és correcta 
+		assertEquals(llista.getValor(0),1);
+		assertEquals(llista.getValor(1),2);	
+		assertEquals(llista.getValor(2),3);	
+		assertEquals(llista.getNElements(),3);
+	
+			// Llista de 4 elements
+		llista = creaLlistaNElements(4);
+		
+		// Eliminem el segon element de la llista
+		llista.eliminaValor(1);
+	
+		// Comprovem que la llista és correcta 
+		assertEquals(llista.getValor(0),0);
+		assertEquals(llista.getValor(1),2);	
+		assertEquals(llista.getValor(2),3);	
+		assertEquals(llista.getNElements(),3);
+
+			// Llista de 4 elements
+		llista = creaLlistaNElements(4);
+		
+		// Eliminem el tercer element de la llista
+		llista.eliminaValor(2);
+	
+		// Comprovem que la llista és correcta 
+		assertEquals(llista.getValor(0),0);
+		assertEquals(llista.getValor(1),1);	
+		assertEquals(llista.getValor(2),3);	
+		assertEquals(llista.getNElements(),3);
+
+			// Llista de 4 elements
+		llista = creaLlistaNElements(4);
+		
+		// Eliminem l'ultim element de la llista
+		llista.eliminaValor(3);
+	
+		// Comprovem que la llista és correcta 
+		assertEquals(llista.getValor(0),0);
+		assertEquals(llista.getValor(1),1);	
+		assertEquals(llista.getValor(2),2);	
+		assertEquals(llista.getNElements(),3);
+}
 
 	@Test
 	void testEsBuida()
