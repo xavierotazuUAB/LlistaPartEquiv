@@ -90,26 +90,31 @@ public class Llista
 		Node seguent = null;	// guardarem el node seguent del que hem d'eliminar
 		
 		int pos = 0;
-		
-		// Comprovem que primer no sigui null
-		if(primer!=null)
+
+		if(posicio>0 && posicio<=getNElements()) // Si posicio és <0 o major al nombre d'elements, no continuem i retornarem false
 		{
-			
-			// Ens desplacem fins el node on hem de fer el tall
-			while(pos<posicio)
+			// Comprovem que primer no sigui null
+			if(primer!=null)
 			{
-				anterior = actual;
-				actual = actual.getNext();
-				pos = pos+1;
+				
+				// Ens desplacem fins el node on hem de fer el tall
+				while(pos<posicio)
+				{
+					anterior = actual;
+					actual = actual.getNext();
+					pos = pos+1;
+				}
+				
+				seguent = actual.getNext(); // guardem una referencia/punter al node següent
+				
+				anterior.setNext(seguent);	// apuntem la referencia/punter next del node anterior al  nou node
+				
+				bEliminat = true;
+
 			}
 			
-			seguent = actual.getNext(); // guardem una referencia/punter al node següent
-			
-			anterior.setNext(seguent);	// apuntem la referencia/punter next del node anterior al  nou node
-			
-			bEliminat = true;
-
 		}
+
 		
 		return bEliminat;
 	}
