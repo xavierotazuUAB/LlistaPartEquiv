@@ -43,6 +43,7 @@ public class Llista
 			Node nou = new Node(valor);	// creem el nou node a insertar
 			nou.setNext(primer);
 			primer = nou;
+			bInsertat = true;
 		}
 		else
 		{
