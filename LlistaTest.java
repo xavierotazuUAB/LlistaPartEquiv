@@ -123,7 +123,7 @@ class LlistaTest {
 	
 		// Comprovem que la llista és correcta 
 		assertEquals(llista.getValor(0),1);
-		assertEqualse(llista.getNElements(),1);
+		assertEquals(llista.getNElements(),1);
 		
 			// Llista de 2 elements
 		llista = creaLlistaNElements(2);
@@ -133,7 +133,7 @@ class LlistaTest {
 	
 		// Comprovem que la llista és correcta 
 		assertEquals(llista.getValor(0),0);
-		assertEqualse(llista.getNElements(),1);
+		assertEquals(llista.getNElements(),1);
 			
 			// Llista de 4 elements
 		llista = creaLlistaNElements(4);
