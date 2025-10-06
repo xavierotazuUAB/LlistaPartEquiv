@@ -4,8 +4,17 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class LlistaTest {
-
+	
 	Llista llista;
+
+	Llista creaLlistaUnElement()
+	{
+		Llista llista_tmp = new Llista();
+		llista_tmp.afegirUltim(0);
+		
+		return llista_tmp;
+	}
+
 
 	@BeforeEach
 	void setUp() throws Exception
@@ -66,10 +75,7 @@ class LlistaTest {
 
 			// Particions equivalents del paràmetre posicio aplicades en una llista d'un element
 
-		Llista llistaun = new Llista(); // Creem llista buida
-
-		assertTrue(llistaun.insertarValor(0, 0));		// Insertem a la posició 0 (la primera). Ara tenim una llista d'un element
-		assertEquals(llistaun.getValor(0),0);
+		Llista llistaun = creaLlistaUnElement(); 
 		
 		// Posicions incorrectes
 		assertFalse(llistaun.insertarValor(-10, 0));	// Insertem a la posició -10
@@ -81,14 +87,12 @@ class LlistaTest {
 		assertEquals(llistaun.getValor(0),10);
 		assertEquals(llistaun.getValor(1),0);
 
-		Llista llistaun2 = new Llista(); // Creem llista buida
-		
-		assertTrue(llistaun2.insertarValor(0, 0));		// Insertem a la posició 0 (la primera). Ara tenim una llista d'un element
+		Llista llistaun2 = creaLlistaUnElement(); 
+
 		assertTrue(llistaun2.insertarValor(1, 1));		// Insertem a la posició 1 (la ultima)
 		assertEquals(llistaun2.getValor(0),0);
 		assertEquals(llistaun2.getValor(1),1);
 		
-
 	}
 
 	@Test

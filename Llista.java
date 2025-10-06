@@ -47,7 +47,7 @@ public class Llista
 		}
 		else
 		{
-			if(posicio>0) // Si posicio és <0, no continuem i retornarem false
+			if(posicio>0 && posicio<=getNElements()) // Si posicio és <0 o major al nombre d'elements, no continuem i retornarem false
 			{
 				// Comprovem que primer no sigui null
 				if(primer!=null)
@@ -60,20 +60,14 @@ public class Llista
 						pos = pos+1;
 					}
 					
-					// Si hem anat més enllà dels limits de la llista, no continuem i retornarem false
-					if(pos<posicio)
-					{
-						seguent = anterior.getNext(); // guardem una referencia/punter al node següent
+					seguent = anterior.getNext(); // guardem una referencia/punter al node següent
 						
-						Node nou = new Node(valor);	// creem el nou node a insertar
+					Node nou = new Node(valor);	// creem el nou node a insertar
 						
-						anterior.setNext(nou);		// apuntem la referencia/punter next del node anterior al  nou node
-						nou.setNext(seguent);
+					anterior.setNext(nou);		// apuntem la referencia/punter next del node anterior al  nou node
+					nou.setNext(seguent);
 						
-						bInsertat = true;
-						
-					}
-					
+					bInsertat = true;				
 
 				}
 				
