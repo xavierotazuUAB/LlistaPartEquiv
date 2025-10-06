@@ -34,7 +34,7 @@ class LlistaTest {
 	@Test
 	void testInsertarValor()
 	{
-		assertFalse(llista.insertarValor(0, 0));	// Llista buida
+//		assertFalse(llista.insertarValor(0, 0));	// Llista buida
 		
 		// Creem la llista
 		assertTrue(llista.afegirUltim(0));
@@ -53,7 +53,6 @@ class LlistaTest {
 		assertEquals(llista.getValor(4),3);	
 
 		// Particions equivalents del paràmetre posicio aplicades en una llsita buida
-		// El cas posicio=0 ja està fet a sobre
 		
 		Llista llistabuida = new Llista(); // Creem llista buida
 		
@@ -61,7 +60,30 @@ class LlistaTest {
 		assertFalse(llistabuida.insertarValor(-1, 0));	// Insertem a la posició -1
 		assertFalse(llistabuida.insertarValor(1, 0));	// Insertem a la posició 1
 		assertFalse(llistabuida.insertarValor(10, 0));	// Insertem a la posició 1
+
+		assertTrue(llistabuida.insertarValor(0, 0));	// Insertem la posicio 0. Hem d'acceptar-ho.
+		assertEquals(llistabuida.getValor(0),0);
+
+			// Particions equivalents del paràmetre posicio aplicades en una llista d'un element
+
+		Llista llistaun = new Llista(); // Creem llista buida
 		
+		// Posicions incorrectes
+		assertFalse(llistaun.insertarValor(-10, 0));	// Insertem a la posició -10
+		assertFalse(llistaun.insertarValor(-1, 0));		// Insertem a la posició -1
+		assertFalse(llistaun.insertarValor(10, 0));		// Insertem a la posició 10
+
+		assertTrue(llistaun.insertarValor(0, 10));		// Insertem a la posició 0 (la primera)
+		assertEquals(llista.getValor(0),10);
+		assertEquals(llista.getValor(1),0);
+
+		Llista llistaun2 = new Llista(); // Creem llista buida
+		
+		assertTrue(llistaun.insertarValor(1, 11));		// Insertem a la posició 1 (la ultima)
+		assertEquals(llista.getValor(0),0);
+		assertEquals(llista.getValor(1),11);
+		
+
 	}
 
 	@Test
