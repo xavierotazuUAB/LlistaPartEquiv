@@ -91,7 +91,7 @@ public class Llista
 		
 		int pos = 0;
 
-		if(posicio>0 && posicio<getNElements()) // Si posicio és <0 o major o igual al nombre d'elements, no continuem i retornarem false
+		if(posicio>=0 && posicio<getNElements()) // Si posicio és <0 o major o igual al nombre d'elements, no continuem i retornarem false
 		{
 			// Comprovem que primer no sigui null
 			if(primer!=null)
