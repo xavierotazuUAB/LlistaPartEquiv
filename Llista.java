@@ -61,7 +61,7 @@ public class Llista
 					}
 					
 					// Si hem anat més enllà dels limits de la llista, no continuem i retornarem false
-					if(pos<=posicio)
+					if(pos<posicio)
 					{
 						seguent = anterior.getNext(); // guardem una referencia/punter al node següent
 						
