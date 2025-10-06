@@ -47,26 +47,36 @@ public class Llista
 		}
 		else
 		{
-			// Comprovem que primer no sigui null
-			if(primer!=null)
+			if(posicio>0) // Si posicio és <0, no continuem i retornarem false
 			{
-				// Ens desplacem fins la posicio on hem de fer la inserció
-				while(pos<posicio)
+				// Comprovem que primer no sigui null
+				if(primer!=null)
 				{
-					anterior = seguent;
-					seguent = seguent.getNext();
-					pos = pos+1;
+					// Ens desplacem fins la posicio on hem de fer la inserció
+					while(pos<posicio)
+					{
+						anterior = seguent;
+						seguent = seguent.getNext();
+						pos = pos+1;
+					}
+					
+					// Si hem anat més enllà dels limits de la llista, no continuem i retornarem false
+					if(pos<=posicio)
+					{
+						seguent = anterior.getNext(); // guardem una referencia/punter al node següent
+						
+						Node nou = new Node(valor);	// creem el nou node a insertar
+						
+						anterior.setNext(nou);		// apuntem la referencia/punter next del node anterior al  nou node
+						nou.setNext(seguent);
+						
+						bInsertat = true;
+						
+					}
+					
+
 				}
 				
-				seguent = anterior.getNext(); // guardem una referencia/punter al node següent
-				
-				Node nou = new Node(valor);	// creem el nou node a insertar
-				
-				anterior.setNext(nou);		// apuntem la referencia/punter next del node anterior al  nou node
-				nou.setNext(seguent);
-				
-				bInsertat = true;
-
 			}
 			
 		}
