@@ -107,7 +107,14 @@ public class Llista
 				
 				seguent = actual.getNext(); // guardem una referencia/punter al node següent
 				
-				anterior.setNext(seguent);	// apuntem la referencia/punter next del node anterior al  nou node
+				if(actual==primer) // no hem recorregut la llista, per tant, estem eliminat el primer element
+				{
+					primer = seguent;
+				}
+				else 
+				{
+					anterior.setNext(seguent);	// hem recorregut la llista
+				}
 				
 				bEliminat = true;
 
