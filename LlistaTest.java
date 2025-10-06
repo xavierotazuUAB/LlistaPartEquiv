@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 class LlistaTest {
 	
-	Llista llista;
+	Llista llistabuida;
 
 	Llista creaLlistaNElements(int n_elem)
 	{
@@ -21,25 +21,25 @@ class LlistaTest {
 	@BeforeEach
 	void setUp() throws Exception
 	{
-		// llista = new Llista();		
+		llistabuida = new Llista();		
 	}
 	
 	@Test
 	void testLlista()
 	{
-		assertEquals(llista.getPrimer(),null);	// decidim que primer ha de ser null
+		assertEquals(llistabuida.getPrimer(),null);	// decidim que primer ha de ser null
 	}
 
 	@Test
 	void testAfegirUltim()
 	{
-		assertTrue(llista.afegirUltim(10));
-		assertEquals(llista.getValor(0),10);
+		assertTrue(llistabuida.afegirUltim(10));
+		assertEquals(llistabuida.getValor(0),10);
 
-		assertTrue(llista.afegirUltim(11));
-		assertTrue(llista.afegirUltim(12));
-		assertEquals(llista.getValor(1),11);
-		assertEquals(llista.getValor(2),12);	
+		assertTrue(llistabuida.afegirUltim(11));
+		assertTrue(llistabuida.afegirUltim(12));
+		assertEquals(llistabuida.getValor(1),11);
+		assertEquals(llistabuida.getValor(2),12);	
 	}
 
 	@Test
@@ -97,40 +97,40 @@ class LlistaTest {
 	@Test
 	void testEliminaValor()
 	{
-		assertFalse(llista.eliminaValor(0)); // llista buida
+		assertFalse(llistabuida.eliminaValor(0)); // llista buida
 		
 		// Creem la llista
-		assertTrue(llista.afegirUltim(0));
-		assertTrue(llista.afegirUltim(1));
-		assertTrue(llista.afegirUltim(2));
-		assertTrue(llista.afegirUltim(3));
+		assertTrue(llistabuida.afegirUltim(0));
+		assertTrue(llistabuida.afegirUltim(1));
+		assertTrue(llistabuida.afegirUltim(2));
+		assertTrue(llistabuida.afegirUltim(3));
 		
 		// Insertem el valor
-		llista.eliminaValor(2);
+		llistabuida.eliminaValor(2);
 
 		// Comprovem que la llista és correcta 
-		assertEquals(llista.getValor(0),0);
-		assertEquals(llista.getValor(1),1);	
-		assertEquals(llista.getValor(2),3);	
+		assertEquals(llistabuida.getValor(0),0);
+		assertEquals(llistabuida.getValor(1),1);	
+		assertEquals(llistabuida.getValor(2),3);	
 	}
 
 	@Test
 	void testEsBuida()
 	{
-		assertTrue(llista.esBuida());
+		assertTrue(llistabuida.esBuida());
 	}
 
 	@Test
 	void testGetNElements()
 	{
-		assertEquals(llista.getNElements(),0);	// Llista buida
+		assertEquals(llistabuida.getNElements(),0);	// Llista buida
 
-		assertTrue(llista.afegirUltim(10));	
-		assertEquals(llista.getNElements(),1);	// Llista amb un element
+		assertTrue(llistabuida.afegirUltim(10));	
+		assertEquals(llistabuida.getNElements(),1);	// Llista amb un element
 
-		assertTrue(llista.afegirUltim(11));
-		assertTrue(llista.afegirUltim(12));
-		assertEquals(llista.getNElements(),3);	// Llista amb 3 elements
+		assertTrue(llistabuida.afegirUltim(11));
+		assertTrue(llistabuida.afegirUltim(12));
+		assertEquals(llistabuida.getNElements(),3);	// Llista amb 3 elements
 	}
 
 }
