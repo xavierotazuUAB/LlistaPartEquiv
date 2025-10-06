@@ -96,12 +96,24 @@ class LlistaTest {
 	@Test
 	void testEliminaValor()
 	{
+		Llista llista;
+		
 			// Llista buida
 		
 		assertFalse(llistabuida.eliminaValor(0));	// No és possible
+
+			// Llista un element
 		
+		llista = creaLlistaNElements(1);
+
+		// Valors incorrectes
+		assertFalse(llista.eliminaValor(-10));
+		assertFalse(llista.eliminaValor(-1));
+		assertFalse(llista.eliminaValor(1));
+		assertFalse(llista.eliminaValor(10));
+
 			// Llista de 4 elements
-		Llista llista = creaLlistaNElements(4);
+		llista = creaLlistaNElements(4);
 		
 		// Insertem el valor al mig de la llista
 		llista.eliminaValor(2);
