@@ -111,6 +111,9 @@ class LlistaTest {
 		assertFalse(llista.eliminaValor(-1));
 		assertFalse(llista.eliminaValor(1));
 		assertFalse(llista.eliminaValor(10));
+		// Valor correcte
+		assertFalse(llista.eliminaValor(0));
+		assertTrue(llista.esBuida());
 
 			// Llista de 4 elements
 		llista = creaLlistaNElements(4);
