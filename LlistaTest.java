@@ -7,10 +7,12 @@ class LlistaTest {
 	
 	Llista llista;
 
-	Llista creaLlistaUnElement()
+	Llista creaLlistaNElements(int n_elem)
 	{
 		Llista llista_tmp = new Llista();
-		llista_tmp.afegirUltim(0);
+		
+		for(int i=0;i<n_elem;++i)
+			llista_tmp.afegirUltim(i);
 		
 		return llista_tmp;
 	}
@@ -19,7 +21,7 @@ class LlistaTest {
 	@BeforeEach
 	void setUp() throws Exception
 	{
-		llista = new Llista();		
+		// llista = new Llista();		
 	}
 	
 	@Test
@@ -46,10 +48,7 @@ class LlistaTest {
 //		assertFalse(llista.insertarValor(0, 0));	// Llista buida
 		
 		// Creem la llista
-		assertTrue(llista.afegirUltim(0));
-		assertTrue(llista.afegirUltim(1));
-		assertTrue(llista.afegirUltim(2));
-		assertTrue(llista.afegirUltim(3));
+		Llista llista = creaLlistaNElements(4);
 		
 		// Insertem el valor
 		llista.insertarValor(2, 10);
@@ -75,7 +74,7 @@ class LlistaTest {
 
 			// Particions equivalents del paràmetre posicio aplicades en una llista d'un element
 
-		Llista llistaun = creaLlistaUnElement(); 
+		Llista llistaun = creaLlistaNElements(1); 
 		
 		// Posicions incorrectes
 		assertFalse(llistaun.insertarValor(-10, 0));	// Insertem a la posició -10
@@ -87,7 +86,7 @@ class LlistaTest {
 		assertEquals(llistaun.getValor(0),10);
 		assertEquals(llistaun.getValor(1),0);
 
-		Llista llistaun2 = creaLlistaUnElement(); 
+		Llista llistaun2 = creaLlistaNElements(1); 
 
 		assertTrue(llistaun2.insertarValor(1, 1));		// Insertem a la posició 1 (la ultima)
 		assertEquals(llistaun2.getValor(0),0);
