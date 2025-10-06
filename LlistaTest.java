@@ -51,6 +51,17 @@ class LlistaTest {
 		assertEquals(llista.getValor(2),10);	
 		assertEquals(llista.getValor(3),2);	
 		assertEquals(llista.getValor(4),3);	
+
+		// Particions equivalents del paràmetre posicio aplicades en una llsita buida
+		// El cas posicio=0 ja està fet a sobre
+		
+		Llista llistabuida = new Llista(); // Creem llista buida
+		
+		assertFalse(llistabuida.insertarValor(-10, 0));	// Insertem a la posició -10
+		assertFalse(llistabuida.insertarValor(-1, 0));	// Insertem a la posició -1
+		assertFalse(llistabuida.insertarValor(1, 0));	// Insertem a la posició 1
+		assertFalse(llistabuida.insertarValor(10, 0));	// Insertem a la posició 1
+		
 	}
 
 	@Test
