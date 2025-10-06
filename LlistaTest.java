@@ -195,7 +195,20 @@ class LlistaTest {
 		assertEquals(llista.getValor(1),1);	
 		assertEquals(llista.getValor(2),2);	
 		assertEquals(llista.getNElements(),3);
-}
+
+	
+			// Llista de 4 elements
+		llista = creaLlistaNElements(4);
+		
+		// Valors incorrectes
+		assertFalse(llista.eliminaValor(-10));
+		assertFalse(llista.eliminaValor(-2));	// Cas limit
+		assertFalse(llista.eliminaValor(-1));	// Cas frontera
+		assertFalse(llista.eliminaValor(4));	// Cas frontera
+		assertFalse(llista.eliminaValor(5));	// Cas limit
+		assertFalse(llista.eliminaValor(10));
+	
+	}
 
 	@Test
 	void testEsBuida()
